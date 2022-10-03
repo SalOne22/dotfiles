@@ -63,6 +63,6 @@ bspc config paddingless_monocle	 true
 bspc config external_rules_command "$XDG_CONFIG_HOME/bspwm/external-rules"
 
 bspc rule -a discord desktop='^3'
-bspc rule -a Firefox desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a Nemo desktop='^5'
 bspc rule -a Vlc desktop='^6'
