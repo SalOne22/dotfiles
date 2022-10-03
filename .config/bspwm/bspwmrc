@@ -1,0 +1,68 @@
+#! /bin/sh
+
+ws1= # Основной
+ws2= # Браузер
+ws3= # Дискорд/Месенджер
+ws4= # Код
+ws5= # Файловый менеджер
+ws6= # Спотифай/Медиа
+
+# Автостарт
+killall polybar
+
+xsetroot -cursor_name left_ptr &
+numlockx &
+sxhkd &
+nitrogen --restore &
+picom --experimental-backends &
+polybar example &
+firefox &
+discord &
+
+
+# Ворк-спейсы
+bspc monitor -d $ws1 $ws2 $ws3 $ws4 $ws5 $ws6
+
+# Рамки и гапсы
+bspc config border_width 2
+bspc config window_gap	 10
+
+bspc config -d $ws2 window_gap 0
+
+bspc config normal_border_color "#23252e"
+bspc config active_border_color "#23252e"
+bspc config focused_border_color "#f9f8fe"
+
+
+# Цвет пространства при выборе положения нового окна
+bspc config presel_feedback_color "#29abcc"
+
+
+# Коофициент разделения окна
+bspc config split_ratio		  0.55
+# Фокус окна наведением курсора
+bspc config focus_follows_pointer true
+bspc config pointer_modifier	  super
+
+
+# Режим монокля когда открыто одно окно
+bspc config single_monocle	     true
+
+
+# Отключение рамок и гапсов если открыто одно окно
+bspc config borderless_monocle   false
+bspc config gapless_monocle      true
+bspc config paddingless_monocle	 true
+
+
+# Схема открытия окон
+# bspc config automatic_scheme	longest_side
+
+
+# Правила окон
+bspc config external_rules_command "$XDG_CONFIG_HOME/bspwm/external-rules"
+
+bspc rule -a discord desktop='^3'
+bspc rule -a Firefox desktop='^2'
+bspc rule -a Nemo desktop='^5'
+bspc rule -a Vlc desktop='^6'
