@@ -15,6 +15,7 @@ numlockx &
 sxhkd &
 nitrogen --restore &
 picom --experimental-backends &
+clipit &
 polybar example &
 firefox &
 discord &
