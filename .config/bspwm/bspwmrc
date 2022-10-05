@@ -16,7 +16,9 @@ sxhkd &
 nitrogen --restore &
 picom --experimental-backends &
 clipit &
+flameshot &
 dunst &
+nemo &
 polybar example &
 firefox &
 discord &

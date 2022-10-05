@@ -18,6 +18,14 @@ super + n
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# lockscreen
+super + x
+	betterlockscreen -l dim
+
+# Screen shot
+Print
+	flameshot gui
+
 #
 # bspwm hotkeys
 #
